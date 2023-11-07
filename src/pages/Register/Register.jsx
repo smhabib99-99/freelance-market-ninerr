@@ -1,15 +1,73 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import auth from "../../firebase/firebase.config";
+import { AuthContext } from "../../providers/AuthProvider";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import Swal from "sweetalert2";
+// import toast from "react-hot-toast";
+// import Swal from 'sweetalert2';
 
 
 const Register = () => {
 
-    const handleRegister = e =>{
+    // const {createUser} = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext);
+
+    const handleRegister = e => {
         e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         const photo = e.target.photo.value;
-        console.log(name,email,password,photo);
+        console.log(name, email, password, photo);
+
+        if (password.length < 6) {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Password must be greater than 6 character.',
+                icon: 'error',
+                confirmButtonText: 'Try Again'
+              })
+            return;
+        }
+        else {
+            Swal.fire({
+                title: 'Success!',
+                text: 'You Successfully Registered!',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+              })
+        }
+        
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(result => {
+            console.log(result.user)
+        })
+        .catch(error => {
+            console.error(error);
+        })
+
+
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                // e.target.reset();
+                // navigate('/');
+            })
+            .catch(error => {
+                console.error(error);
+            })
+
+        // if(password.length<6){
+        //     toast.error("Input more than 6 characters");
+        //     return;
+        // }
+        // else{
+        //     toast.success("Successfully Registered!!!")
+        // }
+
+
+
     }
 
 
