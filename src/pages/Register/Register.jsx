@@ -2,6 +2,19 @@ import { Link } from "react-router-dom";
 
 
 const Register = () => {
+
+    const handleRegister = e =>{
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const photo = e.target.photo.value;
+        console.log(name,email,password,photo);
+    }
+
+
+
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -10,7 +23,7 @@ const Register = () => {
                         <h1 className="text-5xl font-bold">Register now!</h1>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form className="card-body">
+                        <form className="card-body" onSubmit={handleRegister}>
 
                             <div className="form-control">
                                 <label className="label">
@@ -37,7 +50,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">PhotoURL</span>
                                 </label>
-                                <input type="url" name="photo" placeholder="PhotoURL" className="input input-bordered" required />
+                                <input type="photo" name="photo" placeholder="PhotoURL" className="input input-bordered" required />
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Register</button>

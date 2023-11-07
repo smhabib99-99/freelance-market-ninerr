@@ -9,7 +9,7 @@ const Navbar = () => {
     <li><NavLink to='/addJobs'>Add Jobs</NavLink></li>
     <li><NavLink to='/bidsRequest'>Bids Request</NavLink></li>
     <li><NavLink to='/myBids'>My Bids</NavLink></li>
-    <li><NavLink to='/mPostedJobs'>My Posted Jobs</NavLink></li>
+    <li><NavLink to='/my PostedJobs'>My Posted Jobs</NavLink></li>
     <li><NavLink to='/register'>Register</NavLink></li>
     <li><NavLink to='/login'>Login</NavLink></li>
 
