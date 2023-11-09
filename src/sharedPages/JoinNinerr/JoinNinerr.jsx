@@ -7,8 +7,8 @@ const JoinNinerr = () => {
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
                         <h1 className="mb-5 text-5xl font-bold">Suddenly It is so doable.</h1>
-                        <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn-primary  bg-amber-400 rounded-md px-5 py-2 font-semibold text-2xl">Please Join Ninerr</button>
+                        <p className="mb-5">This a site for freelance worker.You can do your job from anywhere anytime you wish.So why late please consider joining our site.</p>
+                        <button className="btn-primary  bg-amber-500 rounded-md px-5 py-2 font-semibold text-2xl">Please Join Ninerr</button>
                     </div>
                 </div>
             </div>
