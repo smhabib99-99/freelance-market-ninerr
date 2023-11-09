@@ -16,11 +16,22 @@ const AddJobs = () => {
         const email = form.email.value;
         const minPrice = form.minPrice.value;
         const maxPrice = form.maxPrice.value;
-        const image = form.image.value;
+        const date = form.date.value;
 
-        const newJobs = { category, title, minPrice, maxPrice, description, email, image }
+        const newJobs = { category, title, minPrice, maxPrice, description, email, date }
         console.log(newJobs);
 
+        fetch('http://localhost:5000/addJobs', {
+            method: 'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(newJobs)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+        })
 
     }
 
