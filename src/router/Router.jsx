@@ -43,7 +43,7 @@ const router = createBrowserRouter([
             {
                 path:'/myPostedJobs',
                 element:<PrivateRoute><MyPostedJobs></MyPostedJobs></PrivateRoute>,
-                loader: ()=>fetch('http://localhost:5000/jobs')
+                loader: ()=>fetch('https://ninerr-server-mtsdxa5lx-habibs-projects-11338489.vercel.app/jobs')
             },
             {
                 path:'/bidsRequest',
@@ -54,9 +54,11 @@ const router = createBrowserRouter([
                 element:<PrivateRoute><JobDetail></JobDetail></PrivateRoute>
             },
             {
-                path:'/update',
-                element:<UpdateJobs></UpdateJobs>
+                path:'/update/:id',
+                element:<UpdateJobs></UpdateJobs>,
+                loader:({params}) => fetch(`https://ninerr-server-mtsdxa5lx-habibs-projects-11338489.vercel.app/jobs/${params.id}`)
             }
+      
         ]
 
     }

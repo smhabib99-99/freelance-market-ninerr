@@ -21,7 +21,7 @@ const AddJobs = () => {
         const newJobs = { category, title, minPrice, maxPrice, description, email, date }
         console.log(newJobs);
 
-        fetch('http://localhost:5000/jobs', {
+        fetch('https://ninerr-server-mtsdxa5lx-habibs-projects-11338489.vercel.app/jobs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

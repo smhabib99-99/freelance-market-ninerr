@@ -33,7 +33,8 @@ const Navbar = () => {
     const navLinks = <>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/jobs'>Add Jobs</NavLink></li>
-    <li><NavLink to='/bidsRequest'>Bids Request</NavLink></li>
+    {/* <li><NavLink to='/bidsRequest'>Bids Request</NavLink></li> */}
+    <li><NavLink to='/update'>Update Jobs</NavLink></li>
     <li><NavLink to='/myBids'>My Bids</NavLink></li>
     <li><NavLink to='/myPostedJobs'>My Posted Jobs</NavLink></li>
     <li><NavLink to='/jobDetail'>Job Detail</NavLink></li>

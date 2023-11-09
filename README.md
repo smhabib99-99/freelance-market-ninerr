@@ -1,8 +1,18 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project Features:
+This project is huge and has lots of features here I am going to mention few of them.
 
-Currently, two official plugins are available:
+#1.Login and Logout functionality.
+#2.Google Login Functionality
+#3.Add Jobs Functionality--> users can post their jobs.
+#4.Update Functionality
+#5.private and protected Route Functionality.
+#6.Posting jobs directly store to database.
+#7.Sweet alert functionality.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+
+# client Side live link:https://ninerr-client.web.app/

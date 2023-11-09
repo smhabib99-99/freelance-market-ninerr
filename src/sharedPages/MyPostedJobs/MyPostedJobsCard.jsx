@@ -1,8 +1,12 @@
 import Swal from "sweetalert2";
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 
 const MyPostedJobsCard = ({ jobs }) => {
+
+    // const{_id} = useParams();
 
 
     const { _id, category, title, minPrice, maxPrice, description, email, date } = jobs;
@@ -20,8 +24,8 @@ const MyPostedJobsCard = ({ jobs }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/jobs/${_id}`,{
-                    method:'delete'
+                fetch(`https://ninerr-server-mtsdxa5lx-habibs-projects-11338489.vercel.app/jobs/${_id}`,{
+                    method:'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -37,7 +41,7 @@ const MyPostedJobsCard = ({ jobs }) => {
                         }
                     })
 
-                    console.log('Deleted')
+                    // console.log('Deleted')
 
 
             }
@@ -58,7 +62,9 @@ const MyPostedJobsCard = ({ jobs }) => {
 
                     <div className="card-actions justify-end">
                         <button onClick={() => handleDelete(_id)} className="btn btn-secondary">Delete</button>
-                        <button className="btn btn-primary">Update</button>
+                       <Link to ={`update/${_id}`}>
+                       <button className="btn btn-primary">Update</button>
+                       </Link>
                     </div>
                 </div>
             </div>
