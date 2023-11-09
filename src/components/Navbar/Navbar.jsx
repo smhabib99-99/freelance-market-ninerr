@@ -80,7 +80,7 @@ const Navbar = () => {
 
                              </>   :
                              <Link to="/login">
-                                <button className='btn btn-sm bg-amber-400 text-white'>Login</button>
+                                <button className='btn btn-sm bg-amber-300 text-white'>Login</button>
                             <button onClick={handleGoogleSignIn} type="submit" className="btn-sm rounded-md bg-amber-400 text-white">Google Login</button>
 
                              </Link>
