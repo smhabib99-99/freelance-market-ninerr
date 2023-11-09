@@ -61,7 +61,7 @@ const Navbar = () => {
                     </div>
                     <div className='flex'>
                     <img className='w-6 md:w-24 md:h-14 rounded-lg ml-2' src="/ninerr2.png" alt="" />
-                    <p className="btn btn-ghost text-black bg-none md:h-14 normal-case md:text-3xl">Ninerr</p>
+                    <p className="btn btn-ghost text-slate-600 bg-none md:h-14 normal-case md:text-3xl">Ninerr</p>
                    
                     </div>
                 </div>
@@ -80,7 +80,7 @@ const Navbar = () => {
 
                              </>   :
                              <Link to="/login">
-                                <button className='btn btn-sm'>Login</button>
+                                <button className='btn btn-sm bg-amber-400 text-white'>Login</button>
                             <button onClick={handleGoogleSignIn} type="submit" className="btn-sm rounded-md bg-amber-400 text-white">Google Login</button>
 
                              </Link>
