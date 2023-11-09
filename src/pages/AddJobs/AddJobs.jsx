@@ -1,5 +1,5 @@
-// import { useContext } from "react";
-// import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
+
 
 
 const AddJobs = () => {
@@ -7,7 +7,7 @@ const AddJobs = () => {
 
     const handleAddJobs = event => {
         event.preventDefault();
-        // const {user} =useContext(AuthContext);
+
 
         const form = event.target;
         const category = form.category.value;
@@ -21,17 +21,29 @@ const AddJobs = () => {
         const newJobs = { category, title, minPrice, maxPrice, description, email, date }
         console.log(newJobs);
 
-        fetch('http://localhost:5000/addJobs', {
+        fetch('http://localhost:5000/jobs', {
             method: 'POST',
-            headers:{
-                'content-type':'application/json'
+            headers: {
+                'content-type': 'application/json'
             },
             body: JSON.stringify(newJobs)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Product Added Successfully.',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                }
+                
+
+
+            })
 
     }
 

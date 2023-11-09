@@ -5,7 +5,6 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "../privateRoute/PrivateRoute";
-// import AddJobs from "../sharedPages/AddJobs/AddJobs";
 import MyBids from "../pages/MyBids/MyBids";
 import MyPostedJobs from "../sharedPages/MyPostedJobs/MyPostedJobs";
 import BidsRequest from "../sharedPages/BidsRequest/BidsRequest";
@@ -33,7 +32,7 @@ const router = createBrowserRouter([
                 element:<Register></Register>
             },
             {
-                path:'/addJobs',
+                path:'/jobs',
                 element:<PrivateRoute><AddJobs></AddJobs></PrivateRoute>
             },
             {
@@ -42,7 +41,8 @@ const router = createBrowserRouter([
             },
             {
                 path:'/myPostedJobs',
-                element:<PrivateRoute><MyPostedJobs></MyPostedJobs></PrivateRoute>
+                element:<PrivateRoute><MyPostedJobs></MyPostedJobs></PrivateRoute>,
+                loader: ()=>fetch('http://localhost:5000/jobs')
             },
             {
                 path:'/bidsRequest',
