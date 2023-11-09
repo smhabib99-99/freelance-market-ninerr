@@ -10,6 +10,7 @@ import MyPostedJobs from "../sharedPages/MyPostedJobs/MyPostedJobs";
 import BidsRequest from "../sharedPages/BidsRequest/BidsRequest";
 import JobDetail from "../pages/JobDetail/JobDetail";
 import AddJobs from "../pages/AddJobs/AddJobs";
+import UpdateJobs from "../sharedPages/MyPostedJobs/UpdateJobs";
 
 
 const router = createBrowserRouter([
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
             {
                 path:'/jobDetail',
                 element:<PrivateRoute><JobDetail></JobDetail></PrivateRoute>
+            },
+            {
+                path:'/update',
+                element:<UpdateJobs></UpdateJobs>
             }
         ]
 

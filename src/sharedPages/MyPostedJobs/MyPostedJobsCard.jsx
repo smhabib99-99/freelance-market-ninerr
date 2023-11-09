@@ -1,12 +1,13 @@
 import Swal from "sweetalert2";
+import PropTypes from 'prop-types';
 
 
 const MyPostedJobsCard = ({ jobs }) => {
 
 
-    const{_id,category, title, minPrice, maxPrice, description, email, date}=jobs;
+    const { _id, category, title, minPrice, maxPrice, description, email, date } = jobs;
 
-    const handleDelete = _id =>{
+    const handleDelete = _id => {
         console.log(_id);
         Swal.fire({
             title: "Are you sure?",
@@ -16,18 +17,31 @@ const MyPostedJobsCard = ({ jobs }) => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch()
+                fetch(`http://localhost:5000/jobs/${_id}`,{
+                    method:'delete'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your jobs post has been deleted.",
+                                icon: "success"
+                            });
 
-            //   Swal.fire({
-            //     title: "Deleted!",
-            //     text: "Your file has been deleted.",
-            //     icon: "success"
-            //   });
+                           
+                        }
+                    })
+
+                    console.log('Deleted')
+
+
             }
-          });
+        });
     }
 
     return (
@@ -43,7 +57,7 @@ const MyPostedJobsCard = ({ jobs }) => {
                     <p>{date}</p>
 
                     <div className="card-actions justify-end">
-                        <button onClick={()=>handleDelete(_id)} className="btn btn-secondary">Delete</button>
+                        <button onClick={() => handleDelete(_id)} className="btn btn-secondary">Delete</button>
                         <button className="btn btn-primary">Update</button>
                     </div>
                 </div>
@@ -53,4 +67,8 @@ const MyPostedJobsCard = ({ jobs }) => {
 };
 
 export default MyPostedJobsCard;
+
+MyPostedJobsCard.propTypes = {
+    jobs: PropTypes.node
+};
 
